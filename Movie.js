@@ -32,7 +32,7 @@ $(document).ready(function(){
 
             $.ajax({
                 //Insert YOUR API Key after the '=' inside the single quotes.
-                url:'https://api.themoviedb.org/3/search/movie?api_key=INSERT-HERE',
+                url:'https://api.themoviedb.org/3/search/movie?api_key=4b0d3b8c3411f42efba606ee257d5f4f',
                 data: query
             })
             
@@ -43,8 +43,11 @@ $(document).ready(function(){
                 //and places the title on the HTML page, where the id="original_title".
                 
                 $("#original_title").html(json.results[0].original_title);
+                $("#overview").html(json.results[0].overview);
+                $("#release_date").html(json.results[0].release_date);
+                $("#popularity").html(json.results[0].popularity);
+                $("#original_language").html(json.results[0].original_language);
                 
-
                 /***********************Retrieve Movie Plot from Server & Add to HTML Document******************
                  TASK #6:  
                  1.  Include the jQuery code below that will retrieve the movie plot or overview from JSON object
